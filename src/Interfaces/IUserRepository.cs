@@ -1,25 +1,26 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Schematic.Identity
 {
     public interface IUserRepository<TUser, TUserFilter>
     {
-        int Create(TUser resource, string token, int userID);
+        Task<int> Create(TUser resource, string token, int userID);
 
-        TUser Read(int id);
+        Task<TUser> Read(int id);
 
-        TUser ReadByEmail(string email);
+        Task<TUser> ReadByEmail(string email);
 
-        bool Update(TUser resource, int userID);
+        Task<int> Update(TUser resource, int userID);
 
-        bool Delete(int id, int userID);
+        Task<int> Delete(int id, int userID);
 
-        List<TUser> List(TUserFilter filter);
+        Task<List<TUser>> List(TUserFilter filter);
 
-        bool SaveToken(TUser resource, string token);
+        Task<bool> SaveToken(TUser resource, string token);
 
-        TokenVerificationResult ValidateToken(string email, string token);
+        Task<TokenVerificationResult> ValidateToken(string email, string token);
 
-        bool SetPassword(TUser resource, string passHash);
+        Task<bool> SetPassword(TUser resource, string passHash);
     }
 }

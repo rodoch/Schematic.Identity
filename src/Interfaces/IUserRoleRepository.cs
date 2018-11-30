@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Schematic.Identity
 {
     public interface IUserRoleRepository<TUserRole>
     {
-        List<TUserRole> List();
+        Task<List<TUserRole>> List();
     }
 }
