@@ -10,7 +10,7 @@ namespace Schematic.Identity
 
         public List<PasswordValidationError> ValidatePassword(string password)
         {
-            if (password == null)
+            if (password is null)
             { 
                 throw new ArgumentNullException();
             }

@@ -5,6 +5,6 @@ namespace Schematic.Identity
 {
     public interface IUserRoleRepository<TUserRole>
     {
-        Task<List<TUserRole>> List();
+        Task<List<TUserRole>> ListAsync();
     }
 }

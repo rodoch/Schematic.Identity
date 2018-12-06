@@ -5,22 +5,22 @@ namespace Schematic.Identity
 {
     public interface IUserRepository<TUser, TUserFilter>
     {
-        Task<int> Create(TUser resource, string token, int userID);
+        Task<int> CreateAsync(TUser resource, string token, int userID);
 
-        Task<TUser> Read(int id);
+        Task<TUser> ReadAsync(int id);
 
-        Task<TUser> ReadByEmail(string email);
+        Task<TUser> ReadByEmailAsync(string email);
 
-        Task<int> Update(TUser resource, int userID);
+        Task<int> UpdateAsync(TUser resource, int userID);
 
-        Task<int> Delete(int id, int userID);
+        Task<int> DeleteAsync(int id, int userID);
 
-        Task<List<TUser>> List(TUserFilter filter);
+        Task<List<TUser>> ListAsync(TUserFilter filter);
 
-        Task<bool> SaveToken(TUser resource, string token);
+        Task<bool> SaveTokenAsync(TUser resource, string token);
 
-        Task<TokenVerificationResult> ValidateToken(string email, string token);
+        Task<TokenVerificationResult> ValidateTokenAsync(string email, string token);
 
-        Task<bool> SetPassword(TUser resource, string passHash);
+        Task<bool> SetPasswordAsync(TUser resource, string passHash);
     }
 }
