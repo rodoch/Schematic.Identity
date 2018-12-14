@@ -2,15 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Schematic.Identity</PackageId>
+    <PackageTags>schematic;cms;identity</PackageTags>
     <Version>0.1.4</Version>
     <Authors>Ronan Doherty</Authors>
-    <Description></Description>
+    <Company>Ronan Doherty</Company>
+    <Description>User authentication and management for the Schematic CMS framework</Description>
+    <PackageIconUrl></PackageIconUrl>
     <PackageProjectUrl>https://github.com/rodoch/Schematic.Identity/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/rodoch/Schematic.Identity/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/rodoch/Schematic.Identity/</RepositoryUrl>
-    <PackageTags>schematic cms identity</PackageTags>
     <PackageReleaseNotes>Prerelease</PackageReleaseNotes>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
