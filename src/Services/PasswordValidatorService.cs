@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Schematic.Identity
 {
-    public class PasswordValidator : IPasswordValidator
+    public class PasswordValidatorService : IPasswordValidatorService
     {
         private const int _minLength = 7;
         private const int _maxLength = 15;
@@ -20,17 +20,17 @@ namespace Schematic.Identity
             bool hasLowerCaseLetter = false;
             bool hasDecimalDigit = false;
 
-            foreach (char c in password)
+            foreach (char character in password)
             {
-                if (char.IsUpper(c)) 
+                if (char.IsUpper(character)) 
                 {
                     hasUpperCaseLetter = true;
                 }
-                else if (char.IsLower(c)) 
+                else if (char.IsLower(character)) 
                 {
                     hasLowerCaseLetter = true;
                 }
-                else if (char.IsDigit(c)) 
+                else if (char.IsDigit(character)) 
                 {
                     hasDecimalDigit= true;
                 }

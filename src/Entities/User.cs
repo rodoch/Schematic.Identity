@@ -8,12 +8,6 @@ namespace Schematic.Identity
     [SchematicUser]
     public class User : ISchematicUser
     {
-        private DateTime? _dateCreated;
-
-        private string _forenames;
-
-        private string _surnames;
-
         public User()
         {
             Roles = new List<UserRole>();
@@ -23,6 +17,7 @@ namespace Schematic.Identity
 
         public string FullName { get; set; }
         
+        private string _forenames;
         [Required(ErrorMessage = "A first name is required")]
         [Display(Name = "First name(s)")]
         public string Forenames
@@ -35,6 +30,7 @@ namespace Schematic.Identity
             }
         }
 
+        private string _surnames;
         [Display(Name = "Surname")]
         public string Surnames 
         {
@@ -53,6 +49,7 @@ namespace Schematic.Identity
 
         public string PassHash { get; set; }
 
+        private DateTime? _dateCreated;
         public DateTime DateCreated
         {
             get => _dateCreated ?? DateTime.UtcNow;

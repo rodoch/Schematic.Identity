@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
 namespace Schematic.Identity
 {
-    public class PasswordHasher<TUser> : IPasswordHasher<TUser> where TUser : ISchematicUser
+    public class PasswordHasherService<TUser> : IPasswordHasherService<TUser> where TUser : ISchematicUser
     {
         private static int _iterationCount { get; set; } = 10000;
         private readonly RandomNumberGenerator _randomNumberGenerator = RandomNumberGenerator.Create();

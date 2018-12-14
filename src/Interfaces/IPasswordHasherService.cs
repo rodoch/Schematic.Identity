@@ -1,6 +1,6 @@
 namespace Schematic.Identity
 {
-    public interface IPasswordHasher<TUser> where TUser : ISchematicUser  
+    public interface IPasswordHasherService<TUser> where TUser : ISchematicUser  
     {
         string HashPassword(TUser user, string password);
 

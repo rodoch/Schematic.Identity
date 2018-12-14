@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Schematic.Identity
 {
-    public interface IPasswordValidator
+    public interface IPasswordValidatorService
     {
         List<PasswordValidationError> ValidatePassword(string password);
 

@@ -1,6 +1,6 @@
 namespace Schematic.Identity
 {
-    public interface IEmailValidator
+    public interface IEmailValidatorService
     {
         bool IsValidEmail(string email);
     }
