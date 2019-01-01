@@ -7,31 +7,35 @@ namespace Schematic.Identity
 {
     public class PasswordHasherService<TUser> : IPasswordHasherService<TUser> where TUser : ISchematicUser
     {
-        private static int _iterationCount { get; set; } = 10000;
         private readonly RandomNumberGenerator _randomNumberGenerator = RandomNumberGenerator.Create();
+        private static int _iterationCount { get; set; } = 10000;
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private static bool ByteArraysEqual(byte[] a, byte[] b)
         {
-            if (a == null && b == null)
+            if (a is null && b is null)
             {
                 return true;
             }
-            if (a == null || b == null || a.Length != b.Length)
+
+            if (a is null || b is null || a.Length != b.Length)
             {
                 return false;
             }
+
             var areSame = true;
+
             for (var i = 0; i < a.Length; i++)
             {
                 areSame &= (a[i] == b[i]);
             }
+
             return areSame;
         }
 
         public virtual string HashPassword(TUser user, string password)
         {
-            if (password == null)
+            if (password is null)
             {
                 throw new ArgumentNullException(nameof(password));
             }
@@ -74,11 +78,11 @@ namespace Schematic.Identity
         
         public virtual PasswordVerificationResult VerifyHashedPassword(TUser user, string hashedPassword, string providedPassword)
         {
-            if (hashedPassword == null)
+            if (hashedPassword is null)
             {
                 throw new ArgumentNullException(nameof(hashedPassword));
             }
-            if (providedPassword == null)
+            if (providedPassword is null)
             {
                 throw new ArgumentNullException(nameof(providedPassword));
             }
